@@ -144,6 +144,7 @@ const RestaurantsList = (props) => {
       <div className="row">
         {restaurants.map((restaurant) => {
           const address = `${restaurant.address.building} ${restaurant.address.street}, ${restaurant.address.zipcode}`
+          console.log(restaurant._id)
           return(
             <div className="col-lg-4 pb-1">
               <div className="card">
