@@ -29,7 +29,9 @@ const Restaurant = ({user}) => {
   }, [id])
 
   const deleteReview = (reviewId, index) => {
-    RestaurantDataService.deleteReview(reviewId, user)
+    console.log(user)
+    console.log(reviewId)
+    RestaurantDataService.deleteReview(reviewId, user.id)
     .then(response => {
       setRestaurant((prevState) => {
         prevState.reviews.splice(index, 1)

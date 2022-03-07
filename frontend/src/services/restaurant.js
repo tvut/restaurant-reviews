@@ -17,8 +17,12 @@ class RestaurantDataService{
         return http.put("/review", data);
     }
 
-    deleteReview(id){
-        return http.delete(`/review?id=${id}`);
+    async deleteReview(id, userId){
+        console.log("in restaurant services")
+        console.log(userId)
+        var res = await http.delete(`/review?id=${id}`, {data: {user_id: userId}});
+        console.log(res.body)
+        return res
     }
 
     createReview(data){

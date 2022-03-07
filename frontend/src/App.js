@@ -11,6 +11,7 @@ function App() {
   const [user, setUser] = React.useState(null);
 
   async function login(user = null) {
+    console.log(user)
     setUser(user);
   }
 
@@ -21,9 +22,9 @@ function App() {
   return (
     <div>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
-        <a href="/restaurants" className="navbar-brand">
-          Restaurant Reviews
-        </a>
+            <Link to={"/"} className="navbar-brand">
+              Restaurant Reviews
+            </Link>
         <div className="navbar-nav mr-auto">
           <li className="nav-item">
             <Link to={"/restaurants"} className="nav-link">
@@ -34,7 +35,7 @@ function App() {
             {user ? (
               <a
                 onClick={logout}
-                classNmae="nav-link"
+                className="nav-link"
                 style={{ cursor: "pointer" }}
               >
                 Logout {user.name}

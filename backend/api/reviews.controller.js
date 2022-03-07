@@ -56,7 +56,8 @@ export default class ReviewsController{
         try{
             const reviewId = req.query.id
             const userId = req.body.user_id
-            console.log(reviewId)
+            console.log(res.data)
+            console.log(res.body)
             const ReviewResponse = await ReviewsDAO.deleteReview(
                 reviewId,
                 userId,
